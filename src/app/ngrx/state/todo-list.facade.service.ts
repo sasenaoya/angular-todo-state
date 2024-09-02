@@ -20,6 +20,10 @@ export class TodoListFacadeService {
     this.store.dispatch(TodoListActions.addTodo({ todo }));
   }
 
+  updateTodo(todo: ITodo) {
+    this.store.dispatch(TodoListActions.updateTodo({ todo }));
+  }
+
   removedTodo(id: number) {
     this.store.dispatch(TodoListActions.removeTodo({ id }));
   }

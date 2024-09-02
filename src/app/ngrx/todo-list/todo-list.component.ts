@@ -50,6 +50,14 @@ export class TodoListComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  onEditTodo(todo: ITodo) {
+    this.todoDialogService.show(todo).afterClosed().subscribe((todo: ITodo) => {
+      if (todo) {
+        this.todoListFacadeService.updateTodo(todo);
+      }
+    });
+  }
+
   onRemoveTodo(todo: ITodo) {
     this.todoListFacadeService.removedTodo(todo.id!);
   }

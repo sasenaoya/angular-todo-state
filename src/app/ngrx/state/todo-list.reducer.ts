@@ -11,5 +11,6 @@ export const initialState: ITodo[] = [
 export const todoListReducer = createReducer(
   initialState,
   on(TodoListActions.addTodo, (state, { todo }) => [...state, todo]),
+  on(TodoListActions.updateTodo, (state, { todo }) => state.map(t => t.id === todo.id ? todo : t)),
   on(TodoListActions.removeTodo, (state, { id }) => state.filter(todo => todo.id !== id)),
 );

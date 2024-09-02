@@ -5,6 +5,7 @@ export const TodoListActions = createActionGroup({
   source: 'TodoList',
   events: {
     'Add Todo': props<{ todo: ITodo }>(),
+    'Update Todo': props<{ todo: ITodo }>(),
     'Remove Todo': props<{ id: number }>(),
   },
 });
