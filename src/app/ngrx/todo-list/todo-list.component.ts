@@ -19,7 +19,7 @@ export class TodoListComponent implements AfterViewInit, OnDestroy {
   todoList$;
   dataSource = new MatTableDataSource<ITodo>();
 
-  displayedColumns: string[] = ['name', 'date'];
+  displayedColumns: string[] = ['name', 'date', 'icon'];
 
   private destroy$ = new Subject<void>();
 
@@ -48,5 +48,9 @@ export class TodoListComponent implements AfterViewInit, OnDestroy {
         this.todoListFacadeService.addTodo(todo);
       }
     });
+  }
+
+  onRemoveTodo(todo: ITodo) {
+    this.todoListFacadeService.removedTodo(todo.id!);
   }
 }

@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { StoreModule } from '@ngrx/store';
@@ -23,6 +24,7 @@ const routes: Routes = [
     MatTableModule,
     MatSortModule,
     MatButtonModule,
+    MatIconModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature('TodoList', {
       todoList: todoListReducer,
