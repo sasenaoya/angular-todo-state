@@ -1,4 +1,11 @@
-<h2 mat-dialog-title>TODOの作成</h2>
+<h2 mat-dialog-title>
+  TODOの
+  @if (data) {
+    編集
+  } @else {
+    作成
+  }
+</h2>
 
 <mat-dialog-content>
   <form [formGroup]="formGroup">
