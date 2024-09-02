@@ -6,6 +6,7 @@ import { Subject, takeUntil } from 'rxjs';
 
 import { TodoListFacadeService } from '../state/todo-list.facade.service';
 import { ITodo } from '../../todo/todo.model';
+import { TodoDialogService } from '../../todo/todo-dialog/todo-dialog.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -22,10 +23,11 @@ export class TodoListComponent implements AfterViewInit, OnDestroy {
 
   private destroy$ = new Subject<void>();
 
-  constructor(private todoListFacadeService: TodoListFacadeService) {
+  constructor(
+    private todoListFacadeService: TodoListFacadeService,
+    private todoDialogService: TodoDialogService,
+  ) {
     this.todoList$ = todoListFacadeService.todoList$;
-    todoListFacadeService.addTodo({ id: 1, name: 'Buy milk' });
-    todoListFacadeService.addTodo({ id: 2, name: 'Buy eggs' });
   }
 
   ngAfterViewInit() {
@@ -38,5 +40,13 @@ export class TodoListComponent implements AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  onAddTodo() {
+    this.todoDialogService.show().afterClosed().subscribe((todo: ITodo) => {
+      if (todo) {
+        this.todoListFacadeService.addTodo(todo);
+      }
+    });
   }
 }

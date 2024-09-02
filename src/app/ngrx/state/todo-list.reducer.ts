@@ -3,7 +3,10 @@ import { TodoListActions } from './todo-list.actions';
 
 import { ITodo } from '../../todo/todo.model';
 
-export const initialState: ITodo[] = [];
+export const initialState: ITodo[] = [
+  { id: 1, name: 'Buy milk' },
+  { id: 2, name: 'Buy eggs' },
+];
 
 export const todoListReducer = createReducer(
   initialState,
