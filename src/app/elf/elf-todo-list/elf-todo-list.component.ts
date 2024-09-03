@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 
 // Todo
 import { ITodo } from '../../todo/todo.model';
-import { TodoDialogService } from '../../todo/todo-dialog/todo-dialog.service';
 
 // State
 import { addTodo, removeTodo, todoList$, updateTodo } from '../state/todo-list.repository';
@@ -16,24 +15,14 @@ import { addTodo, removeTodo, todoList$, updateTodo } from '../state/todo-list.r
 export class ElfTodoListComponent {
   todoList$ = todoList$;
 
-  constructor(
-    private todoDialogService: TodoDialogService,
-  ) { }
+  constructor() { }
 
-  onAddTodo() {
-    this.todoDialogService.show().afterClosed().subscribe((todo: ITodo) => {
-      if (todo) {
-        addTodo(todo);
-      }
-    });
+  onAddTodo(todo: ITodo) {
+    addTodo(todo);
   }
 
-  onEditTodo(todo: ITodo) {
-    this.todoDialogService.show(todo).afterClosed().subscribe((todo: ITodo) => {
-      if (todo) {
-        updateTodo(todo);
-      }
-    });
+  onUpdateTodo(todo: ITodo) {
+    updateTodo(todo);
   }
 
   onRemoveTodo(todo: ITodo) {
