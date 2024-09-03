@@ -20,7 +20,6 @@ export class TodoListState {
 
   @Action(AddTodo)
   addTodo(ctx: StateContext<ITodo[]>, { todo }: AddTodo) {
-    console.log("🔶addTodo", todo);
     const state = ctx.getState();
     ctx.setState([...state, todo]);
   }
