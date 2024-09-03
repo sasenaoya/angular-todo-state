@@ -1,7 +1,7 @@
 import { Dayjs } from 'dayjs';
 
 export interface ITodo {
-  id?: number;
+  id?: string;
   name?: string;
   date?: Dayjs;
 }
