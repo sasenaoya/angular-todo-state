@@ -24,7 +24,7 @@ export class TodoListFacadeService {
     this.store.dispatch(TodoListActions.updateTodo({ todo }));
   }
 
-  removedTodo(id: number) {
+  removedTodo(id: string) {
     this.store.dispatch(TodoListActions.removeTodo({ id }));
   }
 }
