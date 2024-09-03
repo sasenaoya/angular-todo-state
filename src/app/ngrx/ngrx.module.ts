@@ -1,30 +1,31 @@
+// angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
-import { TodoListComponent } from './todo-list/todo-list.component';
+// ngrx
 import { StoreModule } from '@ngrx/store';
+
+// todo
+import { TodoModule } from '../todo/todo.module';
+
+// state
 import { todoListReducer } from './state/todo-list.reducer';
 
+// components
+import { NgrxTodoListComponent } from './ngrx-todo-list/ngrx-todo-list.component';
+
 const routes: Routes = [
-  { path: 'todo-list', component: TodoListComponent },
+  { path: 'todo-list', component: NgrxTodoListComponent },
 ];
 
 @NgModule({
   declarations: [
-    TodoListComponent
+    NgrxTodoListComponent
   ],
   imports: [
     CommonModule,
-    MatTableModule,
-    MatSortModule,
-    MatButtonModule,
-    MatIconModule,
+    TodoModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature('TodoList', {
       todoList: todoListReducer,
