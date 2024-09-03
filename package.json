@@ -20,6 +20,8 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "@ngneat/elf": "^2.5.1",
+    "@ngneat/elf-entities": "^5.0.2",
     "@ngrx/store": "^18.0.2",
     "@ngxs/store": "^18.1.1",
     "dayjs": "^1.11.13",
