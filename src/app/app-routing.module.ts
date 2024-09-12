@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'ngrx', loadChildren: () => import('./ngrx/ngrx.module').then(m => m.NgrxModule) },
   { path: 'ngxs', loadChildren: () => import('./ngxs/ngxs.module').then(m => m.NgxsModule) },
   { path: 'elf', loadChildren: () => import('./elf/elf.module').then(m => m.ElfModule) },
+  { path: 'rx-angular-state', loadChildren: () => import('./rx-angular-state/rx-angular-state.module').then(m => m.RxAngularStateModule) },
 ];
 
 @NgModule({

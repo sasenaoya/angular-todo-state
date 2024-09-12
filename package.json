@@ -24,6 +24,7 @@
     "@ngneat/elf-entities": "^5.0.2",
     "@ngrx/store": "^18.0.2",
     "@ngxs/store": "^18.1.1",
+    "@rx-angular/state": "^18.0.0",
     "dayjs": "^1.11.13",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
