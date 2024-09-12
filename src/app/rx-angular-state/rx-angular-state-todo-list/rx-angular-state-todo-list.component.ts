@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+
+// @rx-angular/state
 import { rxState } from '@rx-angular/state';
+
+// TODO
 import { ITodo } from '../../todo/todo.model';
 
 type TodoListState = {
