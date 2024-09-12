@@ -1,0 +1,8 @@
+<div>
+    <div>Observable</div>
+    <app-todo-list [todoList]="todoList$ | async" (add)="onAddTodo($event)" (update)="onUpdateTodo($event)" (remove)="onRemoveTodo($event)"></app-todo-list>
+</div>
+<div>
+    <div>Signal</div>
+    <app-todo-list [todoList]="todoList()" (add)="onAddTodo($event)" (update)="onUpdateTodo($event)" (remove)="onRemoveTodo($event)"></app-todo-list>
+</div>
