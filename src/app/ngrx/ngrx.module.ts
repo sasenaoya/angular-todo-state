@@ -1,35 +1,13 @@
 // angular
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-// ngrx
-import { StoreModule } from '@ngrx/store';
-
-// todo
-import { TodoModule } from '../todo/todo.module';
-
-// state
-import { todoListReducer } from './state/todo-list.reducer';
-
-// components
-import { NgrxTodoListComponent } from './ngrx-todo-list/ngrx-todo-list.component';
-
 const routes: Routes = [
-  { path: 'todo-list', component: NgrxTodoListComponent },
+  { path: 'store', loadChildren: () => import('./ngrx-store/ngrx-store.module').then(m => m.NgrxStoreModule) },
+  { path: 'component-store', loadChildren: () => import('./ngrx-component-store/ngrx-component-store.module').then(m => m.NgrxComponentStoreModule) },
 ];
 
 @NgModule({
-  declarations: [
-    NgrxTodoListComponent
-  ],
-  imports: [
-    CommonModule,
-    TodoModule,
-    RouterModule.forChild(routes),
-    StoreModule.forFeature('TodoList', {
-      todoList: todoListReducer,
-    }),
-  ]
+  imports: [RouterModule.forChild(routes)],
 })
 export class NgrxModule { }

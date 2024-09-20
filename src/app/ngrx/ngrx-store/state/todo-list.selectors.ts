@@ -1,5 +1,5 @@
 import { createSelector, createFeatureSelector, State } from '@ngrx/store';
-import { ITodo } from '../../todo/todo.model';
+import { ITodo } from '../../../todo/todo.model';
 
 interface ITodoListState {
   todoList: ITodo[];

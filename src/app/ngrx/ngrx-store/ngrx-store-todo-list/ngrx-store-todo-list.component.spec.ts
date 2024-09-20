@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgrxTodoListComponent } from './ngrx-todo-list.component';
+import { NgrxTodoListComponent } from './ngrx-store-todo-list.component';
 
 describe('NgrxTodoListComponent', () => {
   let component: NgrxTodoListComponent;

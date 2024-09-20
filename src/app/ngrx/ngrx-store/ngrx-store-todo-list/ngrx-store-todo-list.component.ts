@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 
 // TODO
-import { ITodo } from '../../todo/todo.model';
+import { ITodo } from '../../../todo/todo.model';
 
 // TODO facade
 import { TodoListFacadeService } from '../state/todo-list.facade.service';
 
 @Component({
-  selector: 'app-ngrx-todo-list',
-  templateUrl: './ngrx-todo-list.component.html',
-  styleUrl: './ngrx-todo-list.component.scss'
+  selector: 'app-ngrx-store-todo-list',
+  templateUrl: './ngrx-store-todo-list.component.html',
+  styleUrl: './ngrx-store-todo-list.component.scss'
 })
-export class NgrxTodoListComponent {
+export class NgrxStoreTodoListComponent {
   todoList$;
 
   constructor(
