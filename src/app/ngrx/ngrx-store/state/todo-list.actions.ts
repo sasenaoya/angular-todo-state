@@ -1,5 +1,5 @@
 import { createActionGroup, props } from '@ngrx/store';
-import { ITodo } from '../../todo/todo.model';
+import { ITodo } from '../../../todo/todo.model';
 
 export const TodoListActions = createActionGroup({
   source: 'TodoList',

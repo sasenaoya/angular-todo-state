@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { TodoListActions } from './todo-list.actions';
 
-import { ITodo } from '../../todo/todo.model';
+import { ITodo } from '../../../todo/todo.model';
 
 export const initialState: ITodo[] = [
   { id: "1", name: 'Buy milk' },

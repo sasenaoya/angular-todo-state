@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { TodoListActions } from './todo-list.actions';
 import { selectTodoList } from './todo-list.selectors';
 
-import { ITodo } from '../../todo/todo.model';
+import { ITodo } from '../../../todo/todo.model';
 
 @Injectable({
   providedIn: 'root'

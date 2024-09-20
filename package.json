@@ -22,6 +22,7 @@
     "@angular/router": "^18.2.0",
     "@ngneat/elf": "^2.5.1",
     "@ngneat/elf-entities": "^5.0.2",
+    "@ngrx/component-store": "^18.0.2",
     "@ngrx/store": "^18.0.2",
     "@ngxs/store": "^18.1.1",
     "@rx-angular/state": "^18.0.0",
